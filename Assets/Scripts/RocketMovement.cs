@@ -8,6 +8,7 @@ public class RocketMovement : MonoBehaviour
 	AudioSource audioSource;
 	[SerializeField] float Thrust = 1000f;
 	[SerializeField] float RotateSpeed = 50f;
+	[SerializeField] AudioClip mainEngine;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -52,7 +53,7 @@ public class RocketMovement : MonoBehaviour
 		{
 			if(!audioSource.isPlaying)
 			{
-				audioSource.Play();
+				audioSource.PlayOneShot(mainEngine);
 			}
 		}
 		else
